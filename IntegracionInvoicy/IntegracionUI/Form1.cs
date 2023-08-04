@@ -21,8 +21,8 @@ namespace IntegracionUI
 
             Datos = new Dictionary<string, string>
             {
-                { "EmpPK", "VFU63Qpmb+jRoFU2TzyMwg==" }, // Clave de Socio (Inicio->Panel de control->Socios)
-                { "EmpCodigo", "sM992dLBnNNOQ6NrWWEilZ7kP9iO8" }, // Clave de Acceso (Inicio->Panel de control->Datos de la Sucursal->Clave de acceso)
+                { "EmpPK", "" }, // Clave de Socio (Inicio->Panel de control->Socios)
+                { "EmpCodigo", "" }, // Clave de Acceso (Inicio->Panel de control->Datos de la Sucursal->Clave de acceso)
                 { "EmpCK", "" },
                 { "XML", "" },
             };
