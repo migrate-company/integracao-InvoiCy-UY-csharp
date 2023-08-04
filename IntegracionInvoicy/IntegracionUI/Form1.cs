@@ -12,6 +12,8 @@ namespace IntegracionUI
 
         private OpcionIntegracion Opcion;
 
+        private string Ambiente;
+
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +27,7 @@ namespace IntegracionUI
                 { "EmpCodigo", "" }, // Clave de Acceso (Inicio->Panel de control->Datos de la Sucursal->Clave de acceso)
                 { "EmpCK", "" },
                 { "XML", "" },
+                { "Ambiente", "Pruebas"}
             };
         }
 
@@ -119,6 +122,43 @@ namespace IntegracionUI
         private void richTxtXML_Click(object sender, EventArgs e)
         {
             richTxtXML.Text = "";
+        }
+
+
+        private void checkBoxPruebas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxPruebas.Checked)
+            {
+                Datos["Ambiente"] = "Pruebas";
+                if(checkBoxProducion.Checked)
+                    checkBoxProducion.Checked = false;
+            }
+            else
+            {
+                if (!checkBoxProducion.Checked)
+                {
+                    Datos["Ambiente"] = "Producion";
+                    checkBoxProducion.Checked = true;
+                }
+            }
+        }
+
+        private void checkBoxProducion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxProducion.Checked)
+            {
+                Datos["Ambiente"] = "Producion";
+                if (checkBoxPruebas.Checked)
+                    checkBoxPruebas.Checked = false;
+            }
+            else
+            {
+                if (!checkBoxPruebas.Checked)
+                {
+                    Datos["Ambiente"] = "Pruebas";
+                    checkBoxPruebas.Checked = true;
+                }
+            }
         }
     }
 

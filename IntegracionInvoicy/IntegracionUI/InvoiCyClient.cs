@@ -46,6 +46,7 @@ namespace IntegracionUI
         // Función que realiza la escritura SOAP
         public void GeneraSoap(Dictionary<string,string> datos, int tipo)
         {
+            var URL = datos["Ambiente"] == "Pruebas" ? URL_Pruebas : URL_Producion; 
             UrlWs = $"{URL[tipo]}?wsdl";
             var encabezado = GeneraEncabezado(datos["EmpCodigo"], datos["EmpPK"], datos["EmpCK"]);
 
@@ -107,16 +108,16 @@ namespace IntegracionUI
 
         public string? GetSoapRet() 
         {
-            string XmlRespuesta = SoapRet;
-            XmlRespuesta = XmlRespuesta.Replace("&lt;", "<");
-            XmlRespuesta = XmlRespuesta.Replace("&gt;", ">");
-            XmlRespuesta = XmlRespuesta.Replace("&quot;", "\"");
+            string? XmlRespuesta = SoapRet;
+            XmlRespuesta = XmlRespuesta?.Replace("&lt;", "<");
+            XmlRespuesta = XmlRespuesta?.Replace("&gt;", ">");
+            XmlRespuesta = XmlRespuesta?.Replace("&quot;", "\"");
             return XmlRespuesta; 
         }
 
         private string[] ServicoTipo =
         {
-            "EnvioCFE",
+            $"EnvioCFE",
             "ConsultaCFE",
             "Anulacion",
             "ConsultaCFERecebidos",
@@ -178,7 +179,8 @@ namespace IntegracionUI
             "Xmlconsulta",
             "Xmlconsulta",
         };
-        private string[] URL =
+
+        private string[] URL_Pruebas =
         {
             "https://appuypruebas.migrate.info/InvoiCy/aws_emissionfactura.aspx",
             "https://appuypruebas.migrate.info/InvoiCy/aws_consultafactura.aspx",
@@ -197,7 +199,30 @@ namespace IntegracionUI
             "https://appuypruebas.migrate.info/InvoiCy/aws_impresion.aspx",
             "https://appuypruebas.migrate.info/InvoiCy/aws_descargaemitidos.aspx",
             "https://appuypruebas.migrate.info/InvoiCy/aws_consultaitems.aspx",
-            "https://appuypruebas.migrate.info/InvoiCy/aaws_consultaempresas.aspx",
+            "https://appuypruebas.migrate.info/InvoiCy/aws_consultaempresas.aspx",
+        };
+
+
+        private string[] URL_Producion =
+        {
+            "https://appuy.migrate.info/InvoiCy/aws_emissionfactura.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_consultafactura.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_anulacion.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_consultarecibidos.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_descargarecibidos.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_aceptacionrecibidos.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_consultadatosgenerales.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_validacion.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_impresiondelsocio.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_consultarut.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_consultareportediario.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_registroempresa.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_registrocae.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_consultanotificaciones.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_impresion.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_descargaemitidos.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_consultaitems.aspx",
+            "https://appuy.migrate.info/InvoiCy/aws_consultaempresas.aspx",
         };
 
 
