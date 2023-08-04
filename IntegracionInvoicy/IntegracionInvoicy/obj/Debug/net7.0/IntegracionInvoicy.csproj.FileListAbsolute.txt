@@ -1,0 +1,15 @@
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\bin\Debug\net7.0\IntegracionInvoicy.exe
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\bin\Debug\net7.0\IntegracionInvoicy.deps.json
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\bin\Debug\net7.0\IntegracionInvoicy.runtimeconfig.json
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\bin\Debug\net7.0\IntegracionInvoicy.dll
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\bin\Debug\net7.0\IntegracionInvoicy.pdb
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\obj\Debug\net7.0\IntegracionInvoicy.csproj.AssemblyReference.cache
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\obj\Debug\net7.0\IntegracionInvoicy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\obj\Debug\net7.0\IntegracionInvoicy.AssemblyInfoInputs.cache
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\obj\Debug\net7.0\IntegracionInvoicy.AssemblyInfo.cs
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\obj\Debug\net7.0\IntegracionInvoicy.csproj.CoreCompileInputs.cache
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\obj\Debug\net7.0\IntegracionInvoicy.dll
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\obj\Debug\net7.0\refint\IntegracionInvoicy.dll
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\obj\Debug\net7.0\IntegracionInvoicy.pdb
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\obj\Debug\net7.0\IntegracionInvoicy.genruntimeconfig.cache
+C:\Users\ea23318\source\repos\MIGRATE\Migrate Company\integracao-InvoiCy-UY-csharp\IntegracionInvoicy\IntegracionInvoicy\obj\Debug\net7.0\ref\IntegracionInvoicy.dll
