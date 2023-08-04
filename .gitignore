@@ -1,0 +1,23 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/IntegracionInvoicy/.vs/IntegracionInvoicy/FileContentIndex/26056816-22b7-4cda-b344-d172adc88c12.vsidx
+/IntegracionInvoicy/.vs/IntegracionInvoicy/FileContentIndex/58dd38c0-2e55-4c76-acd3-c16cedf1f1ad.vsidx
+/IntegracionInvoicy/.vs/IntegracionInvoicy/v17/.suo
+/IntegracionInvoicy/IntegracionUI/bin/Release/net7.0-windows/publish/win-x86/D3DCompiler_47_cor3.dll
+/IntegracionInvoicy/IntegracionUI/bin/Release/net7.0-windows/publish/win-x86/IntegracionUI.exe
+/IntegracionInvoicy/IntegracionUI/bin/Release/net7.0-windows/publish/win-x86/IntegracionUI.pdb
+/IntegracionInvoicy/IntegracionUI/bin/Release/net7.0-windows/publish/win-x86/PenImc_cor3.dll
+/IntegracionInvoicy/IntegracionUI/bin/Release/net7.0-windows/publish/win-x86/PresentationNative_cor3.dll
+/IntegracionInvoicy/IntegracionUI/bin/Release/net7.0-windows/publish/win-x86/vcruntime140_cor3.dll
+/IntegracionInvoicy/IntegracionUI/bin/Release/net7.0-windows/publish/win-x86/wpfgfx_cor3.dll
+/IntegracionInvoicy/IntegracionUI/bin/Release/net7.0-windows/win-x86
+/IntegracionInvoicy/IntegracionUI/bin/Release/net7.0-windows/IntegracionUI.dll
+/IntegracionInvoicy/IntegracionUI/bin/Release/net7.0-windows/IntegracionUI.pdb
+/IntegracionInvoicy/IntegracionUI/obj/Release/net7.0-windows/win-x86/IntegracionUI.csproj.GenerateResource.cache
+/IntegracionInvoicy/IntegracionUI/obj/Release/net7.0-windows/win-x86/IntegracionUI.dll
+/IntegracionInvoicy/IntegracionUI/obj/Release/net7.0-windows/win-x86/IntegracionUI.pdb
+/IntegracionInvoicy/IntegracionUI/obj/Release/net7.0-windows/IntegracionUI.csproj.GenerateResource.cache
+/IntegracionInvoicy/IntegracionUI/obj/Release/net7.0-windows/IntegracionUI.dll
+/IntegracionInvoicy/IntegracionUI/obj/Release/net7.0-windows/IntegracionUI.pdb

@@ -177,9 +177,9 @@
             checkBoxProducion.AutoSize = true;
             checkBoxProducion.Location = new Point(673, 85);
             checkBoxProducion.Name = "checkBoxProducion";
-            checkBoxProducion.Size = new Size(98, 24);
+            checkBoxProducion.Size = new Size(105, 24);
             checkBoxProducion.TabIndex = 8;
-            checkBoxProducion.Text = "Produción";
+            checkBoxProducion.Text = "Producción";
             checkBoxProducion.UseVisualStyleBackColor = true;
             checkBoxProducion.CheckedChanged += checkBoxProducion_CheckedChanged;
             // 

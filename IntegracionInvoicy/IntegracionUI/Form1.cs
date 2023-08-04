@@ -130,7 +130,7 @@ namespace IntegracionUI
             if (checkBoxPruebas.Checked)
             {
                 Datos["Ambiente"] = "Pruebas";
-                if(checkBoxProducion.Checked)
+                if (checkBoxProducion.Checked)
                     checkBoxProducion.Checked = false;
             }
             else
