@@ -24,7 +24,8 @@ namespace IntegracionUI
             Datos = new Dictionary<string, string>
             {
                 { "EmpPK", "" }, // Clave de Socio (Inicio->Panel de control->Socios)
-                { "EmpCodigo", "" }, // Clave de Acceso (Inicio->Panel de control->Datos de la Sucursal->Clave de acceso)
+                { "ClaveAcceso", "" }, // Clave de Acceso (Inicio->Panel de control->Datos de la Sucursal->Ver la clave de acceso)
+                { "EmpCodigo", "" }, // Código de integración (Inicio->Panel de control->Datos de la Sucursal->Código de integración)
                 { "EmpCK", "" },
                 { "XML", "" },
                 { "Ambiente", "Pruebas"}
@@ -35,10 +36,14 @@ namespace IntegracionUI
         private async void btnExecutarManual_Click(object sender, EventArgs e)
         {
             //Gera CK
-            Datos["EmpCK"] = GeneraHashMD5(Datos["EmpCodigo"] + Datos["XML"]);
-
-            txtClavePartner.Text = Datos["EmpPK"];
-            txtClaveAcceso.Text = Datos["EmpCodigo"];
+            if ((int)Opcion == 11)
+            {
+                Datos["EmpCK"] = GeneraHashMD5(Datos["EmpPK"] + Datos["XML"]);
+            }
+            else
+            {
+                Datos["EmpCK"] = GeneraHashMD5(Datos["ClaveAcceso"] + Datos["XML"]);
+            }
 
             var tipo = Enum.GetName(typeof(OpcionIntegracion), Opcion);
 
@@ -49,19 +54,19 @@ namespace IntegracionUI
             var respuesta = clientUY.GetSoapRet();
 
             //Busca o código e a descrição de retorno.
-            if (respuesta.Contains("</MsgDsc>"))
+            if (respuesta is not null && respuesta.Contains("</MsgDsc>"))
             {
                 txtMensage.Text = respuesta.Substring(respuesta.IndexOf("<MsgDsc>"), respuesta.IndexOf("</MsgDsc>") - respuesta.IndexOf("<MsgDsc>")).Replace("<MsgDsc>", "");
             }
             else txtMensage.Text = "";
 
-            if (respuesta.Contains("</MsgCod>"))
+            if (respuesta is not null && respuesta.Contains("</MsgCod>"))
             {
                 txtCodigo.Text = respuesta.Substring(respuesta.IndexOf("<MsgCod>"), respuesta.IndexOf("</MsgCod>") - respuesta.IndexOf("<MsgCod>")).Replace("<MsgCod>", "");
             }
             else txtCodigo.Text = "";
 
-            if (respuesta.Contains($"</{tipo}Retorno>"))
+            if (respuesta is not null && respuesta.Contains($"</{tipo}Retorno>"))
             {
                 var resp = respuesta.Substring(respuesta.IndexOf($"<{tipo}Retorno>"), respuesta.IndexOf($"</{tipo}Retorno>") - respuesta.IndexOf($"<{tipo}Retorno>") + tipo.Length + 10);
                 richTxtRespuesta.Text = XDocument.Parse(resp).ToString();
@@ -71,21 +76,19 @@ namespace IntegracionUI
         }
 
         //Función que genera un hash MD5 de una string
-        public string GeneraHashMD5(string input)
+        public static string GeneraHashMD5(string input)
         {
-            using (System.Security.Cryptography.MD5 md5Hash = System.Security.Cryptography.MD5.Create())
+            using System.Security.Cryptography.MD5 md5Hash = System.Security.Cryptography.MD5.Create();
+            // input = "clave_de_acceso" + "<CFE>...</CFE>"
+            byte[] data = md5Hash.ComputeHash(System.Text.Encoding.UTF8.GetBytes(input));
+
+            System.Text.StringBuilder sBuilder = new System.Text.StringBuilder();
+
+            for (int i = 0; i < data.Length; i++)
             {
-                // input = "clave_de_acceso" + "<CFE>...</CFE>"
-                byte[] data = md5Hash.ComputeHash(System.Text.Encoding.UTF8.GetBytes(input));
-
-                System.Text.StringBuilder sBuilder = new System.Text.StringBuilder();
-
-                for (int i = 0; i < data.Length; i++)
-                {
-                    sBuilder.Append(data[i].ToString("x2"));
-                }
-                return sBuilder.ToString();
+                sBuilder.Append(data[i].ToString("x2"));
             }
+            return sBuilder.ToString();
         }
 
         private void comboBoxOpcion_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,7 +104,13 @@ namespace IntegracionUI
 
         private void txtClaveAcceso_TextChanged(object sender, EventArgs e)
         {
-            Datos["EmpCodigo"] = txtClaveAcceso.Text;
+            Datos["ClaveAcceso"] = txtClaveAcceso.Text;
+            CanExecute();
+        }
+
+        private void txtEmpCodigo_TextChanged(object sender, EventArgs e)
+        {
+            Datos["EmpCodigo"] = txtEmpCodigo.Text;
             CanExecute();
         }
 
@@ -113,9 +122,13 @@ namespace IntegracionUI
 
         private void CanExecute()
         {
-            if (Datos["EmpCodigo"] != "" && Datos["EmpPK"] != "" && Datos["EmpCodigo"] != "")
+            if (Datos["EmpCodigo"] != "" && Datos["EmpPK"] != "" && Datos["ClaveAcceso"] != "" && Datos["XML"] != "")
             {
                 btnExecutarManual.Enabled = true;
+            }
+            else
+            {
+                btnExecutarManual.Enabled = false;
             }
         }
 
@@ -160,6 +173,7 @@ namespace IntegracionUI
                 }
             }
         }
+
     }
 
     public enum OpcionIntegracion
@@ -171,11 +185,11 @@ namespace IntegracionUI
         [Display(Name = "Anulación de CFE")]
         Anulacion = 2,
         [Display(Name = "Consulta de CFE Recibidos")]
-        ConsultaCFERecebidos = 3,
+        ConsultaCFERecibidos = 3,
         [Display(Name = "Descarga de CFE Recibidos")]
-        DescargaCFERecebidos = 4,
+        DescargaCFERecibidos = 4,
         [Display(Name = "Aceptación de CFE Recibidos")]
-        AceptacionCFERecebidos = 5,
+        AceptacionCFERecibidos = 5,
         [Display(Name = "Consulta de Datos Generales")]
         ConsultaDatosGenerales = 6,
         [Display(Name = "Validación de CFE")]
