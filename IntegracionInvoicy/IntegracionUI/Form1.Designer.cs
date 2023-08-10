@@ -48,7 +48,7 @@
             // 
             // btnExecutarManual
             // 
-            btnExecutarManual.Location = new Point(286, 97);
+            btnExecutarManual.Location = new Point(299, 118);
             btnExecutarManual.Margin = new Padding(3, 2, 3, 2);
             btnExecutarManual.Name = "btnExecutarManual";
             btnExecutarManual.Size = new Size(200, 22);
@@ -82,27 +82,27 @@
             comboBoxOpcion.DisplayMember = "0";
             comboBoxOpcion.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxOpcion.FormattingEnabled = true;
-            comboBoxOpcion.Location = new Point(11, 98);
+            comboBoxOpcion.Location = new Point(11, 117);
             comboBoxOpcion.Margin = new Padding(3, 2, 3, 2);
             comboBoxOpcion.Name = "comboBoxOpcion";
-            comboBoxOpcion.Size = new Size(202, 23);
+            comboBoxOpcion.Size = new Size(269, 23);
             comboBoxOpcion.TabIndex = 0;
             comboBoxOpcion.SelectedIndexChanged += comboBoxOpcion_SelectedIndexChanged;
             // 
             // richTxtRespuesta
             // 
-            richTxtRespuesta.Location = new Point(14, 453);
+            richTxtRespuesta.Location = new Point(14, 484);
             richTxtRespuesta.Name = "richTxtRespuesta";
             richTxtRespuesta.ReadOnly = true;
-            richTxtRespuesta.Size = new Size(678, 300);
+            richTxtRespuesta.Size = new Size(678, 270);
             richTxtRespuesta.TabIndex = 10;
             richTxtRespuesta.Text = "";
             // 
             // richTxtXML
             // 
-            richTxtXML.Location = new Point(14, 126);
+            richTxtXML.Location = new Point(11, 151);
             richTxtXML.Name = "richTxtXML";
-            richTxtXML.Size = new Size(678, 250);
+            richTxtXML.Size = new Size(678, 270);
             richTxtXML.TabIndex = 4;
             richTxtXML.Text = "<CFE> . . . </CFE>";
             richTxtXML.Click += richTxtXML_Click;
@@ -112,7 +112,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(14, 389);
+            label1.Location = new Point(14, 423);
             label1.Name = "label1";
             label1.Size = new Size(53, 15);
             label1.TabIndex = 10;
@@ -121,7 +121,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(28, 409);
+            label2.Location = new Point(28, 443);
             label2.Name = "label2";
             label2.Size = new Size(49, 15);
             label2.TabIndex = 11;
@@ -129,7 +129,7 @@
             // 
             // txtCodigo
             // 
-            txtCodigo.Location = new Point(92, 406);
+            txtCodigo.Location = new Point(92, 440);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.ReadOnly = true;
             txtCodigo.Size = new Size(76, 23);
@@ -138,7 +138,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(185, 409);
+            label3.Location = new Point(185, 443);
             label3.Name = "label3";
             label3.Size = new Size(69, 15);
             label3.TabIndex = 12;
@@ -146,7 +146,7 @@
             // 
             // txtMensage
             // 
-            txtMensage.Location = new Point(260, 406);
+            txtMensage.Location = new Point(260, 440);
             txtMensage.Name = "txtMensage";
             txtMensage.ReadOnly = true;
             txtMensage.Size = new Size(432, 23);
@@ -155,7 +155,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(28, 432);
+            label4.Location = new Point(28, 466);
             label4.Name = "label4";
             label4.Size = new Size(73, 15);
             label4.TabIndex = 13;
@@ -166,7 +166,7 @@
             checkBoxPruebas.AutoSize = true;
             checkBoxPruebas.Checked = true;
             checkBoxPruebas.CheckState = CheckState.Checked;
-            checkBoxPruebas.Location = new Point(499, 100);
+            checkBoxPruebas.Location = new Point(512, 121);
             checkBoxPruebas.Margin = new Padding(3, 2, 3, 2);
             checkBoxPruebas.Name = "checkBoxPruebas";
             checkBoxPruebas.Size = new Size(68, 19);
@@ -178,7 +178,7 @@
             // checkBoxProducion
             // 
             checkBoxProducion.AutoSize = true;
-            checkBoxProducion.Location = new Point(588, 100);
+            checkBoxProducion.Location = new Point(601, 121);
             checkBoxProducion.Margin = new Padding(3, 2, 3, 2);
             checkBoxProducion.Name = "checkBoxProducion";
             checkBoxProducion.Size = new Size(87, 19);
@@ -193,16 +193,17 @@
             txtEmpCodigo.Margin = new Padding(3, 2, 3, 2);
             txtEmpCodigo.Name = "txtEmpCodigo";
             txtEmpCodigo.PlaceholderText = "Código de integración (EmpCodigo)";
-            txtEmpCodigo.Size = new Size(679, 23);
+            txtEmpCodigo.Size = new Size(677, 23);
             txtEmpCodigo.TabIndex = 3;
             txtEmpCodigo.TextChanged += txtEmpCodigo_TextChanged;
             // 
             // txtPagina
             // 
             txtPagina.Enabled = false;
-            txtPagina.Location = new Point(219, 98);
+            txtPagina.Location = new Point(11, 89);
             txtPagina.Name = "txtPagina";
-            txtPagina.Size = new Size(61, 23);
+            txtPagina.PlaceholderText = "Pagina";
+            txtPagina.Size = new Size(113, 23);
             txtPagina.TabIndex = 14;
             txtPagina.Click += txtPagina_Click;
             txtPagina.TextChanged += txtPagina_TextChanged;

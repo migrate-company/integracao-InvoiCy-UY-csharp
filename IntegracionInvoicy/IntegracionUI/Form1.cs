@@ -19,7 +19,7 @@ namespace IntegracionUI
         {
             InitializeComponent();
             comboBoxOpcion.DataSource = Enum.GetValues(typeof(OpcionIntegracion));
-            comboBoxOpcion.SelectedIndex = 0;
+            comboBoxOpcion.SelectedIndex = -1;
             btnExecutarManual.Enabled = false;
 
             Datos = new Dictionary<string, string>
@@ -96,14 +96,9 @@ namespace IntegracionUI
         private void comboBoxOpcion_SelectedIndexChanged(object sender, EventArgs e)
         {
             _ = Enum.TryParse(comboBoxOpcion.SelectedValue?.ToString(), out Opcion);
-            if ((int)Opcion == 15 || (int)Opcion == 16) 
-            { 
-                txtPagina.Enabled = true; txtPagina.PlaceholderText = "Pagina"; 
-            }
-            else 
-            { 
-                txtPagina.Enabled = false; txtPagina.PlaceholderText = ""; 
-            }
+
+            if (comboBoxOpcion.SelectedIndex == 15 || comboBoxOpcion.SelectedIndex == 16) { txtPagina.Enabled = true; }
+            else { txtPagina.Enabled = false; }
         }
 
         private void txtClavePartner_TextChanged(object sender, EventArgs e)
@@ -132,7 +127,7 @@ namespace IntegracionUI
 
         private void CanExecute()
         {
-            if (Datos["EmpCodigo"] != "" && Datos["EmpPK"] != "" && Datos["ClaveAcceso"] != "" && Datos["XML"] != "" && (!txtPagina.Enabled || (txtPagina.Enabled && txtPagina.Text != "")))
+            if (Datos["EmpPK"] != "" && Datos["ClaveAcceso"] != "" && Datos["XML"] != "")
             {
                 btnExecutarManual.Enabled = true;
             }
@@ -225,7 +220,7 @@ namespace IntegracionUI
         [Display(Name = "Consulta de RUT")]
         ConsultaRUT = 9,
         [Display(Name = "Consulta de Datos Reporte Diário")]
-        ConsultaDatosReporte = 10,
+        ConsultaReporteDiario = 10,
         [Display(Name = "Registro de Empresa")]
         RegistroEmpresa = 11,
         [Display(Name = "Registro de CAE")]
