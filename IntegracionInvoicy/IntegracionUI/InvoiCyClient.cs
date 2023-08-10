@@ -34,7 +34,7 @@ namespace IntegracionUI
             if (tipo != 11) sb.Append($"&lt;EmpCodigo&gt;{datos["EmpCodigo"]}&lt;/EmpCodigo&gt;");
             sb.Append($"&lt;EmpPK&gt;{datos["EmpPK"]}&lt;/EmpPK&gt;");
             sb.Append($"&lt;EmpCK&gt;{datos["EmpCK"]}&lt;/EmpCK&gt;");
-            if (tipo == 15 || tipo == 16) sb.Append($"&lt;Pagina&gt;&lt;/Pagina&gt;"); //Informa la pagina deseada. Si no informado retorna pagina 1
+            if (tipo == 15 || tipo == 16) sb.Append($"&lt;Pagina&gt;{datos["Pagina"]}&lt;/Pagina&gt;"); //Informa la pagina deseada. Si no informado retorna pagina 1
             sb.Append($"&lt;/Encabezado&gt;");
 
             return sb.ToString();

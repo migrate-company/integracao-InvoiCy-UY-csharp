@@ -43,6 +43,7 @@
             checkBoxPruebas = new CheckBox();
             checkBoxProducion = new CheckBox();
             txtEmpCodigo = new TextBox();
+            txtPagina = new TextBox();
             SuspendLayout();
             // 
             // btnExecutarManual
@@ -84,7 +85,7 @@
             comboBoxOpcion.Location = new Point(11, 98);
             comboBoxOpcion.Margin = new Padding(3, 2, 3, 2);
             comboBoxOpcion.Name = "comboBoxOpcion";
-            comboBoxOpcion.Size = new Size(269, 23);
+            comboBoxOpcion.Size = new Size(202, 23);
             comboBoxOpcion.TabIndex = 0;
             comboBoxOpcion.SelectedIndexChanged += comboBoxOpcion_SelectedIndexChanged;
             // 
@@ -196,11 +197,22 @@
             txtEmpCodigo.TabIndex = 3;
             txtEmpCodigo.TextChanged += txtEmpCodigo_TextChanged;
             // 
+            // txtPagina
+            // 
+            txtPagina.Enabled = false;
+            txtPagina.Location = new Point(219, 98);
+            txtPagina.Name = "txtPagina";
+            txtPagina.Size = new Size(61, 23);
+            txtPagina.TabIndex = 14;
+            txtPagina.Click += txtPagina_Click;
+            txtPagina.TextChanged += txtPagina_TextChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 765);
+            Controls.Add(txtPagina);
             Controls.Add(checkBoxProducion);
             Controls.Add(checkBoxPruebas);
             Controls.Add(label4);
@@ -242,5 +254,6 @@
         private CheckBox checkBoxPruebas;
         private CheckBox checkBoxProducion;
         private TextBox txtEmpCodigo;
+        private TextBox txtPagina;
     }
 }

@@ -1,5 +1,6 @@
 using EmissionFactura;
 using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using static System.Net.WebRequestMethods;
 using static System.Windows.Forms.Design.AxImporter;
@@ -28,6 +29,7 @@ namespace IntegracionUI
                 { "EmpCodigo", "" }, // Código de integración (Inicio->Panel de control->Datos de la Sucursal->Código de integración)
                 { "EmpCK", "" },
                 { "XML", "" },
+                { "Pagina", ""},
                 { "Ambiente", "Pruebas"}
             };
         }
@@ -94,6 +96,14 @@ namespace IntegracionUI
         private void comboBoxOpcion_SelectedIndexChanged(object sender, EventArgs e)
         {
             _ = Enum.TryParse(comboBoxOpcion.SelectedValue?.ToString(), out Opcion);
+            if ((int)Opcion == 15 || (int)Opcion == 16) 
+            { 
+                txtPagina.Enabled = true; txtPagina.PlaceholderText = "Pagina"; 
+            }
+            else 
+            { 
+                txtPagina.Enabled = false; txtPagina.PlaceholderText = ""; 
+            }
         }
 
         private void txtClavePartner_TextChanged(object sender, EventArgs e)
@@ -122,7 +132,7 @@ namespace IntegracionUI
 
         private void CanExecute()
         {
-            if (Datos["EmpCodigo"] != "" && Datos["EmpPK"] != "" && Datos["ClaveAcceso"] != "" && Datos["XML"] != "")
+            if (Datos["EmpCodigo"] != "" && Datos["EmpPK"] != "" && Datos["ClaveAcceso"] != "" && Datos["XML"] != "" && (!txtPagina.Enabled || (txtPagina.Enabled && txtPagina.Text != "")))
             {
                 btnExecutarManual.Enabled = true;
             }
@@ -174,6 +184,22 @@ namespace IntegracionUI
             }
         }
 
+        private void txtPagina_TextChanged(object sender, EventArgs e)
+        {
+            Regex regex = new Regex(@"^[0-9]+$");
+            if (!regex.IsMatch(txtPagina.Text))
+            {
+                txtPagina.Text = "";
+            }
+
+            Datos["Pagina"] = txtPagina.Text;
+            CanExecute();
+        }
+
+        private void txtPagina_Click(object sender, EventArgs e)
+        {
+            txtPagina.Text = "";
+        }
     }
 
     public enum OpcionIntegracion
